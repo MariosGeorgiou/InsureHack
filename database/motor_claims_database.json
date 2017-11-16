@@ -1,1 +1,1 @@
-var claimdata = '[{ "name":"John", "age":31, "city":"New York" },{ "name":"John1", "age":321, "city":"New York city" },{ "name":"John1", "age":321, "city":"New Kork city" }]';
+var claimdata = '[{ "claim":"5040", "policy":3147423, "policyname":"Jason Bourn","drivername":"Jason Bourn","location":"York","type":"Non-fault" },{ "claim":"5041", "policy":4268247, "policyname":"John Smith","drivername":"John Smith","location":"London","type":"Fault" }]';

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Smart Choice - Clin Claims</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+	<style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+	   table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Clin Auctions</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+
+          <h1 class="my-4">Garage X</h1>
+          <div class="list-group">
+            <a href="#carouselExampleIndicators0" class="list-group-item">Active Auctions</a>
+            <a href="#carouselExampleIndicators1" class="list-group-item">Pending Confirmation</a>
+            <a href="#carouselExampleIndicators2" class="list-group-item">Accepted Auctions</a>
+          </div>
+
+			<div id="map"></div>
+			<script>
+			  function initMap() {
+				var london = {lat: 51.508, lng: -0.0761};
+				var map = new google.maps.Map(document.getElementById('map'), {
+				  zoom: 12,
+				  center: london
+				});
+				var marker = new google.maps.Marker({
+				  position: london,
+				  map: map
+				});
+			  }
+			</script>
+			<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqYTk-dFMIIiLEZf50myLOHG_dmp5Cba4&callback=initMap">
+			</script>
+		
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active" height="350px" width="900px"  id="carouselExampleIndicators0">
+                <table>
+				  <tr bgcolor="#42b6f4">
+					<th>Make</th>
+					<th>Model</th>
+					<th>Location</th>
+					<th>Est Cost</th>
+					<th>Duration Left (Hrs:Min)</th>
+				  </tr>
+				  <tr href="#Job1" style="cursor:pointer">
+					<td>Toyota</td>
+					<td>Prius</td>
+					<td>E1W 1UN</td>
+					<td>£450</td>
+					<td>5:30</td>
+				  </tr>
+				  <tr href="Job2">
+					<td>Jaguar</td>
+					<td>F-Type</td>
+					<td>E1W 1UN</td>
+					<td>£2500</td>
+					<td>7:20</td>
+				  </tr>
+				  <tr>
+					<td>Lamborghini</td>
+					<td>Aventador</td>
+					<td>E1W 1UN</td>
+					<td>£7800</td>
+					<td>15:00</td>
+				  </tr>
+				  <tr>
+					<td>Vauxhall</td>
+					<td>Astra</td>
+					<td>E1W 1UN</td>
+					<td>£250</td>
+					<td>9:30</td>
+				  </tr>
+				  <tr>
+					<td>Peugeot</td>
+					<td>C1</td>
+					<td>E1W 1UN</td>
+					<td>£850</td>
+					<td>13:30</td>
+				  </tr>
+				  <tr>
+					<td>BMW</td>
+					<td>520D</td>
+					<td>E1W 1UN</td>
+					<td>£1765</td>
+					<td>23:30</td>
+				  </tr>
+				</table>
+              </div>
+              <div class="carousel-item" id="carouselExampleIndicators1">
+               <table>
+				  <tr bgcolor="#f49e42">
+					<th>Make</th>
+					<th>Model</th>
+					<th>Location</th>
+					<th>Quoted Price</th>
+					<th>Quoted Duration (Days)</th>
+				  </tr>
+				  <tr href="#Job1" style="cursor:pointer">
+					<td>Toyota</td>
+					<td>Prius</td>
+					<td>E1W 1UN</td>
+					<td>£400</td>
+					<td>5</td>
+				  </tr>
+				  <tr href="Job2">
+					<td>Jaguar</td>
+					<td>F-Type</td>
+					<td>E1W 1UN</td>
+					<td>£2200</td>
+					<td>10</td>
+				  </tr>
+				  <tr>
+					<td>Lamborghini</td>
+					<td>Aventador</td>
+					<td>E1W 1UN</td>
+					<td>£7200</td>
+					<td>15</td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				</table>
+              </div>
+              <div class="carousel-item" id="carouselExampleIndicators2">
+                <table>
+				  <tr bgcolor="#41f4a0">
+					<th>Make</th>
+					<th>Model</th>
+					<th>Location</th>
+					<th>Accepted Price</th>
+					<th>Accepted Duration (Days)</th>
+				  </tr>
+				  <tr href="#Job1" style="cursor:pointer">
+					<td>Mercedes</td>
+					<td>E220</td>
+					<td>E1W 1UN</td>
+					<td>£1850</td>
+					<td>4</td>
+				  </tr>
+				  <tr href="Job2">
+					<td>Land Rover</td>
+					<td>Range Rover</td>
+					<td>E1W 1UN</td>
+					<td>£3500</td>
+					<td>7</td>
+				  </tr>
+				  <tr>
+					<td>Volkwagen</td>
+					<td>Golf</td>
+					<td>E1W 1UN</td>
+					<td>£780</td>
+					<td>3</td>
+				  </tr>
+				  <tr href="Job2">
+					<td>Audi</td>
+					<td>A4</td>
+					<td>E1W 1UN</td>
+					<td>£1500</td>
+					<td>9</td>
+				  </tr>
+				 <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				  <tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				  </tr>
+				</table>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a id="Job1" href="#"><img class="card-img-top" src="./img/toyota-prius-body-damage_100177928_m.jpg" alt="" height="150px" width="400px"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Job #1</a>
+                  </h4>
+                  <h5>£450.00</h5>
+                  Make: Toyota<br>
+				  Model: Prius<br>
+				  Location: E1W 1UN<br>
+				  Damage Details: <br>
+                </div>
+                <div class="card-footer">
+                  <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>-->
+				  Bid Price:<br>
+				  <input type="Number" name="Price"><br>
+				  Duration (Days):<br>
+				  <input type="Number" name="Duration"><br>
+				  <input type="submit" value="Bid for Job" align="center" style="color:white;background-color:green;"><br>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a id="Job2" href="#"><img class="card-img-top" src="./img/jaguar.jpg" alt="" height="150px" width="400px"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Job #2</a>
+                  </h4>
+                  <h5>£2500.00</h5>
+                  Make: Jaguar<br>
+				  Model: F-Type<br>
+				  Location: E1W 1UN<br>
+				  Damage Details: <br>
+                </div>
+                <div class="card-footer">
+                <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>-->
+				  Bid Price:<br>
+				  <input type="Number" name="Price"><br>
+				  Duration (Days):<br>
+				  <input type="Number" name="Duration"><br>
+				  <input type="submit" value="Bid for Job" align="center" style="color:white;background-color:green;"><br>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="./img/lamborgini.jpg" alt="" height="150px" width="400px"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Job #3</a>
+                  </h4>
+                  <h5>£7800.00</h5>
+                  Make: Lamborghini<br>
+				  Model: Aventador<br>
+				  Location: E1W 1UN<br>
+				  Damage Details: <br>
+                </div>
+                <div class="card-footer">
+				  <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>-->
+				  Bid Price:<br>
+				  <input type="Number" name="Price"><br>
+				  Duration (Days):<br>
+				  <input type="Number" name="Duration"><br>
+				  <input type="submit" value="Bid for Job" align="center" style="color:white;background-color:green;"><br>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="./img/windscreen.jpg" alt="" height="150px" width="400px"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Job #4</a>
+                  </h4>
+                  <h5>£250.00</h5>
+                  Make: Vauxhall<br>
+				  Model: Astra<br>
+				  Location: E1W 1UN<br>
+				  Damage Details: <br>
+                </div>
+                <div class="card-footer">
+                  <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>-->
+				  Bid Price:<br>
+				  <input type="Number" name="Price"><br>
+				  Duration (Days):<br>
+				  <input type="Number" name="Duration"><br>
+				  <input type="submit" value="Bid for Job" align="center" style="color:white;background-color:green;"><br>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="./img/peugeot.jpg" alt="" height="150px" width="400px"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Job #5</a>
+                  </h4>
+                  <h5>£850.00</h5>
+                  Make: Peugeot<br>
+				  Model: C1<br>
+				  Location: E1W 1UN<br>
+				  Damage Details: <br>
+                </div>
+                <div class="card-footer">
+                  <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>-->
+				  Bid Price:<br>
+				  <input type="Number" name="Price"><br>
+				  Duration (Days):<br>
+				  <input type="Number" name="Duration"><br>
+				  <input type="submit" value="Bid for Job" align="center" style="color:white;background-color:green;"><br>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="./img/bmw.jpg" alt="" height="150px" width="400px"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Job #6</a>
+                  </h4>
+                  <h5>£1765.00</h5>
+                  Make: BMW<br>
+				  Model: 520D<br>
+				  Location: E1W 1UN<br>
+				  Damage Details: <br>
+                </div>
+                <div class="card-footer">
+                  <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>-->
+				  Bid Price:<br>
+				  <input type="Number" name="Price"><br>
+				  Duration (Days):<br>
+				  <input type="Number" name="Duration"><br>
+				  <input type="submit" value="Bid for Job" align="center" style="color:white;background-color:green;"><br>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Clin Auctions 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
